@@ -1,0 +1,12 @@
+# ninja log v6
+13	282	7636677999848939	build.ninja	c6b44b74c03462af
+21	101	7636677323506382	CMakeFiles/SmartLibrary.dir/main.c.obj	3ce4427632a27329
+24	75	7636677323541367	CMakeFiles/SmartLibrary.dir/stackNode.c.obj	5cac92ce1e59b98b
+26	85	7636677323564779	CMakeFiles/SmartLibrary.dir/queueNode.c.obj	a5339afc8611e007
+29	76	7636677323586113	CMakeFiles/SmartLibrary.dir/priorityQueueNode.c.obj	393dab5da64e5da3
+31	83	7636677323609531	CMakeFiles/SmartLibrary.dir/circularQueue.c.obj	6745bd33c47f35d3
+34	91	7636677323637304	CMakeFiles/SmartLibrary.dir/stack_operations.c.obj	d75ebcd9db490bcf
+43	95	7636677323738255	CMakeFiles/SmartLibrary.dir/circular_queue_operations.c.obj	51483e81dfeb583c
+40	102	7636677323703111	CMakeFiles/SmartLibrary.dir/priority_queue_operations.c.obj	3dc2e9f2ea38e282
+46	121	7636677323768177	CMakeFiles/SmartLibrary.dir/menu.c.obj	e62cd76d1b3650e7
+37	104	7636677323669809	CMakeFiles/SmartLibrary.dir/queue_operations.c.obj	2de3e11e4696ebeb
