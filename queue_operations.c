@@ -1,13 +1,11 @@
-# include "queueNode.c"
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
+#include "queueNode.c"  // Use a header file instead of "queueNode.c"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void enqueue(QueueNode** front, QueueNode** rear, char* book);
 char* dequeue(QueueNode** front, QueueNode** rear);
 void displayQueue(QueueNode* front);
-
-
 
 // Enqueue book into the queue
 void enqueue(QueueNode** front, QueueNode** rear, char* book) {
@@ -16,7 +14,9 @@ void enqueue(QueueNode** front, QueueNode** rear, char* book) {
         printf("Memory allocation failed!\n");
         return;
     }
-    strcpy(newNode->book, book);
+
+    strncpy(newNode->book, book, sizeof(newNode->book) - 1); // Prevent buffer overflow
+    newNode->book[sizeof(newNode->book) - 1] = '\0'; // Ensure null termination
     newNode->next = NULL;
 
     if (*rear == NULL) {
@@ -30,19 +30,27 @@ void enqueue(QueueNode** front, QueueNode** rear, char* book) {
 // Dequeue book from the queue
 char* dequeue(QueueNode** front, QueueNode** rear) {
     if (*front == NULL) {
-        return "No reservations to process!";
+        return NULL; // Return NULL when queue is empty
     }
 
     QueueNode* temp = *front;
-    char* book = temp->book;
-    *front = (*front)->next;
 
+    // Allocate memory for the book string before freeing the node
+    char* book = (char*)malloc(strlen(temp->book) + 1);
+    if (!book) {
+        printf("Memory allocation failed!\n");
+        return NULL;
+    }
+    strcpy(book, temp->book);
+
+    // Update front and free the old front node
+    *front = (*front)->next;
     if (*front == NULL) {
         *rear = NULL;
     }
 
     free(temp);
-    return book;
+    return book;  // Caller must free this memory after use
 }
 
 // Display queue contents

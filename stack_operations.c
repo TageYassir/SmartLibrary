@@ -4,7 +4,8 @@
 # include <string.h>
 
 void push(StackNode** top, char* book);
-char* pop(StackNode** top);
+
+void pop(StackNode **top);
 void displayStack(StackNode* top);
 
 // Push book onto the stack
@@ -20,15 +21,15 @@ void push(StackNode** top, char* book) {
 }
 
 // Pop book from the stack
-char* pop(StackNode** top) {
+void pop(StackNode **top) {
     if (*top == NULL) {
-        return "No books to return!";
+        printf("No books to return!\n");
+        return ;
     }
     StackNode* temp = *top;
+    printf("Book returned is : %s\n", temp->book);
     *top = (*top)->next;
-    char* book = temp->book;
     free(temp);
-    return book;
 }
 
 // Display stack contents

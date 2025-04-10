@@ -1,5 +1,5 @@
 # ninja log v6
-13	282	7636677999848939	build.ninja	c6b44b74c03462af
+13	282	7659807062478747	build.ninja	c6b44b74c03462af
 21	101	7636677323506382	CMakeFiles/SmartLibrary.dir/main.c.obj	3ce4427632a27329
 24	75	7636677323541367	CMakeFiles/SmartLibrary.dir/stackNode.c.obj	5cac92ce1e59b98b
 26	85	7636677323564779	CMakeFiles/SmartLibrary.dir/queueNode.c.obj	a5339afc8611e007

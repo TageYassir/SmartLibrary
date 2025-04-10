@@ -39,7 +39,7 @@ void menu() {
                 push(&borrowedBooks, book);
                 break;
             case 2:
-                printf("Returned book: %s\n", pop(&borrowedBooks));
+                pop(&borrowedBooks);
                 break;
             case 3:
                 printf("Enter book to reserve: ");
@@ -57,7 +57,7 @@ void menu() {
                 insertPriorityQueue(&urgentRequests, book, priority);
                 break;
             case 6:
-                printf("Processed urgent request: %s\n", removePriorityQueue(&urgentRequests));
+                removePriorityQueue(&urgentRequests);
                 break;
             case 7:
                 printf("Enter book for circular reservation: ");
