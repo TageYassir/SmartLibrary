@@ -7,14 +7,14 @@ char* dequeueCircular(CircularQueue* cq);
 void displayCircularQueue(CircularQueue* cq);
 void initCircularQueue(CircularQueue* cq);
 
-// Initialize Circular Queue
+// Initialization of our circular queue
 void initCircularQueue(CircularQueue* cq) {
     cq->front = 0;
     cq->rear = -1;
     cq->count = 0;
 }
 
-// Enqueue book into Circular Queue (FIFO - Reservation)
+// Enqueue book (fifo which means first in first out)
 void enqueueCircular(CircularQueue* cq, char* book) {
     if (cq->count == MAX_RESERVATIONS) {
         printf("Circular queue is full! Cannot reserve more books.\n");
@@ -26,7 +26,7 @@ void enqueueCircular(CircularQueue* cq, char* book) {
     cq->count++;
 }
 
-// Dequeue book from Circular Queue (FIFO - Processing reservation)
+// Dequeue book also using fifo
 char* dequeueCircular(CircularQueue* cq) {
     if (cq->count == 0) {
         return "No reservations in queue!";
@@ -39,7 +39,7 @@ char* dequeueCircular(CircularQueue* cq) {
     return book;
 }
 
-// Display Circular Queue Reservations
+// Display
 void displayCircularQueue(CircularQueue* cq) {
     if (cq->count == 0) {
         printf("No reservations in circular queue.\n");

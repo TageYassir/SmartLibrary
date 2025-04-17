@@ -8,7 +8,7 @@ void push(StackNode** top, char* book);
 void pop(StackNode **top);
 void displayStack(StackNode* top);
 
-// Push book onto the stack
+// Push book
 void push(StackNode** top, char* book) {
     StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
     if (!newNode) {
@@ -20,7 +20,7 @@ void push(StackNode** top, char* book) {
     *top = newNode;
 }
 
-// Pop book from the stack
+// Pop book
 void pop(StackNode **top) {
     if (*top == NULL) {
         printf("No books to return!\n");
@@ -32,7 +32,7 @@ void pop(StackNode **top) {
     free(temp);
 }
 
-// Display stack contents
+// Display
 void displayStack(StackNode* top) {
     if (top == NULL) {
         printf("No borrowed books.\n");

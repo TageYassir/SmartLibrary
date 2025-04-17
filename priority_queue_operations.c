@@ -4,7 +4,7 @@
 # include <string.h>
 
 void insertPriorityQueue(PriorityQueueNode** head, char* book, int priority);
-char* removePriorityQueue(PriorityQueueNode** head);
+void removePriorityQueue(PriorityQueueNode **head);
 void displayPriorityQueue(PriorityQueueNode* head);
 
 // Insert book into the priority queue
@@ -31,18 +31,18 @@ void insertPriorityQueue(PriorityQueueNode** head, char* book, int priority) {
     }
 }
 
-// Remove the highest-priority book
-char* removePriorityQueue(PriorityQueueNode** head) {
+// Remove the highest priority book
+void removePriorityQueue(PriorityQueueNode **head) {
     if (*head == NULL) {
-        return "No urgent requests to process!";
+        printf("No urgent requests to process!\n");
+        return;
     }
 
     PriorityQueueNode* temp = *head;
-    char* book = temp->book;
+    printf("Processed urgent request: %s\n",temp->book);
     *head = (*head)->next;
 
     free(temp);
-    return book;
 }
 
 // Display priority queue contents
